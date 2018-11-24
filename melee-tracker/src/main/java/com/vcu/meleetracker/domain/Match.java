@@ -41,6 +41,7 @@ public class Match {
     private Integer player2Stocks;
 
     public Match(Date matchStart, Stage stage, Player player1, Character player1Character, Integer player1Stocks, Player player2, Character player2Character, Integer player2Stocks) {
+    public Match(){}
         this.matchStart = matchStart;
         this.stage = stage;
         this.player1 = player1;
