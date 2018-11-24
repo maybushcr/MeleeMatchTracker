@@ -15,6 +15,10 @@ public class Match {
     private Date matchStart;
 
     @ManyToOne
+    @JoinColumn(name = "set_id")
+    private Set set;
+
+    @ManyToOne
     @JoinColumn(name = "stage_id")
     private Stage stage;
 
@@ -42,7 +46,10 @@ public class Match {
 
     public Match(Date matchStart, Stage stage, Player player1, Character player1Character, Integer player1Stocks, Player player2, Character player2Character, Integer player2Stocks) {
     public Match(){}
+
+    public Match(Date matchStart, Set set, Stage stage, Player player1, Character player1Character, Integer player1Stocks, Player player2, Character player2Character, Integer player2Stocks) {
         this.matchStart = matchStart;
+        this.set = set;
         this.stage = stage;
         this.player1 = player1;
         this.player1Character = player1Character;
@@ -66,6 +73,14 @@ public class Match {
 
     public void setMatchStart(Date matchStart) {
         this.matchStart = matchStart;
+    }
+
+    public Set getSet() {
+        return set;
+    }
+
+    public void setSet(Set set) {
+        this.set = set;
     }
 
     public Stage getStage() {
