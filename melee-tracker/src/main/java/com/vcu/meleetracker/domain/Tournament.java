@@ -1,6 +1,11 @@
 package com.vcu.meleetracker.domain;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="TOURNAMENTS")
@@ -13,6 +18,10 @@ public class Tournament {
     @ManyToOne
     @JoinColumn(name = "tournament_type_id")
     private TournamentType tournamentType;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy="tournament",cascade = CascadeType.ALL)
+    private List<Set> sets = new ArrayList<>();
 
     public Tournament(){}
 

@@ -1,7 +1,12 @@
 package com.vcu.meleetracker.domain;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="MATCHES")
@@ -44,7 +49,10 @@ public class Match {
     @Column(name = "player2_stocks")
     private Integer player2Stocks;
 
-    public Match(Date matchStart, Stage stage, Player player1, Character player1Character, Integer player1Stocks, Player player2, Character player2Character, Integer player2Stocks) {
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(mappedBy="match",cascade = CascadeType.ALL)
+    private List<Strike> strikes = new ArrayList<>();
+
     public Match(){}
 
     public Match(Date matchStart, Set set, Stage stage, Player player1, Character player1Character, Integer player1Stocks, Player player2, Character player2Character, Integer player2Stocks) {
