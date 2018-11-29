@@ -9,14 +9,38 @@
 <body>
 <nav class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" href="#">Matches</a>
+        <a class="nav-link" href="../">Index</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../players">Players</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../characters">Characters</a>
     </li>
     <li class="nav-item">
         <a class="nav-link active" href="#">Matches</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../stages">Stages</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../sets">Sets</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../strikes">Strikes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../rock_paper_scissors">Rock Paper Scissors</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../tournament_types">Tournament Types</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="../tournaments">Tournaments</a>
+    </li>
 </nav>
 <h1>Matches</h1>
-<table class="table">
+<table class="table" border="1" style="width:300px">
     <tr>
         <td>ID</td>
         <td>Start</td>
@@ -33,7 +57,6 @@
         <td th:text="${match.matchId}">Match ID</td>
         <td th:text="${match.matchStart}">Start Time</td>
         <td th:text="${match.stage.stageId}">StageID</td>
-
         <td th:text="${match.set.setId}">Set ID</td>
         <td th:text="${match.player1.playerId}">Player1 ID</td>
         <td th:text="${match.player1Character.characterId}">Player1 Character ID</td>

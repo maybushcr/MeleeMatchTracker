@@ -15,13 +15,13 @@
         <a class="nav-link" href="../players">Players</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="#">Characters</a>
+        <a class="nav-link" href="../characters">Characters</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="../matches">Matches</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../stages">Stages</a>
+        <a class="nav-link active" href="#">Stages</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="../sets">Sets</a>
@@ -39,17 +39,15 @@
         <a class="nav-link" href="../tournaments">Tournaments</a>
     </li>
 </nav>
-<h1>Characters</h1>
+<h1>Stages</h1>
 <table class="table" border="1" style="width:300px">
     <tr>
         <td>ID</td>
         <td>Name</td>
-        <td>Weight</td>
     </tr>
-    <tr th:each="character: ${characters}">
-        <td th:text="${character.characterId}">Character ID</td>
-        <td th:text="${character.name}">Character Name</td>
-        <td th:text="${character.weight}">Character Weight</td>
+    <tr th:each="stage: ${stages}">
+        <td th:text="${stage.stageId}">Stage ID</td>
+        <td th:text="${stage.name}">Stage Name</td>
     </tr>
 </table>
 </body>
