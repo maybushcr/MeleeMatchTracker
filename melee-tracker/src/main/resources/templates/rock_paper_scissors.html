@@ -15,7 +15,7 @@
         <a class="nav-link" href="../players">Players</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="#">Characters</a>
+        <a class="nav-link" href="../characters">Characters</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="../matches">Matches</a>
@@ -30,7 +30,7 @@
         <a class="nav-link" href="../strikes">Strikes</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="../rock_paper_scissors">Rock Paper Scissors</a>
+        <a class="nav-link active" href="#">Rock Paper Scissors</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="../tournament_types">Tournament Types</a>
@@ -39,18 +39,6 @@
         <a class="nav-link" href="../tournaments">Tournaments</a>
     </li>
 </nav>
-<h1>Characters</h1>
-<table class="table" border="1" style="width:300px">
-    <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Weight</td>
-    </tr>
-    <tr th:each="character: ${characters}">
-        <td th:text="${character.characterId}">Character ID</td>
-        <td th:text="${character.name}">Character Name</td>
-        <td th:text="${character.weight}">Character Weight</td>
-    </tr>
-</table>
+
 </body>
 </html>
