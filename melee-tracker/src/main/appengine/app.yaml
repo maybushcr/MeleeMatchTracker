@@ -14,7 +14,8 @@
 # [START appyaml]
 runtime: java
 env: flex
-
+env_variables:
+  JAVA_USER_OPTS: '-Dspring.profiles.active=gcp'
 handlers:
 - url: /.*
   script: this field is required, but ignored
