@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.web;
+package com.vcu.meleetracker.database.web;
 
-import com.vcu.meleetracker.repo.RockPaperScissorsRepository;
+import com.vcu.meleetracker.database.repo.RockPaperScissorsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

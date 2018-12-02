@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.web;
+package com.vcu.meleetracker.database.web;
 
-import com.vcu.meleetracker.repo.StageRepository;
+import com.vcu.meleetracker.database.repo.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/stages")
-public class StageController {
-
+@RequestMapping(value = "/matches")
+public class MatchController
+{
     @Autowired
-    StageRepository StageRepository;
+    MatchRepository MatchRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getStages(Model model){
-        model.addAttribute("stages",StageRepository.findAll());
-        return "stages";
+    public String getMatches(Model model){
+        model.addAttribute("matches",MatchRepository.findAll());
+        return "matches";
     }
 }

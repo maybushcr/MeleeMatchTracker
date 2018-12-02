@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.web;
+package com.vcu.meleetracker.database.web;
 
-import com.vcu.meleetracker.repo.TournamentTypeRepository;
+import com.vcu.meleetracker.database.repo.TournamentTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

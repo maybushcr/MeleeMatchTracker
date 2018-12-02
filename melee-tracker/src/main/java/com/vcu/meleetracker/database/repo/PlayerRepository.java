@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.repo;
+package com.vcu.meleetracker.database.repo;
 
-import com.vcu.meleetracker.domain.Player;
+import com.vcu.meleetracker.database.domain.Player;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PlayerRepository extends CrudRepository<Player, Integer> {

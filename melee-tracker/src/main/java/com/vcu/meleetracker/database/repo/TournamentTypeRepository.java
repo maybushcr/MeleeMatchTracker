@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.repo;
+package com.vcu.meleetracker.database.repo;
 
-import com.vcu.meleetracker.domain.TournamentType;
+import com.vcu.meleetracker.database.domain.TournamentType;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TournamentTypeRepository extends CrudRepository<TournamentType, Integer> {

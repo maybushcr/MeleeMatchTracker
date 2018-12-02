@@ -1,4 +1,4 @@
-package com.vcu.meleetracker.domain;
+package com.vcu.meleetracker.database.domain;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;

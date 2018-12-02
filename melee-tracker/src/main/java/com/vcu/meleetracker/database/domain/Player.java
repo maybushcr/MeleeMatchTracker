@@ -1,4 +1,4 @@
-package com.vcu.meleetracker.domain;
+package com.vcu.meleetracker.database.domain;
 
 import javax.persistence.*;
 

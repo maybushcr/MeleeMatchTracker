@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.repo;
+package com.vcu.meleetracker.database.repo;
 
-import com.vcu.meleetracker.domain.Stage;
+import com.vcu.meleetracker.database.domain.Stage;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StageRepository extends CrudRepository<Stage,Integer> {

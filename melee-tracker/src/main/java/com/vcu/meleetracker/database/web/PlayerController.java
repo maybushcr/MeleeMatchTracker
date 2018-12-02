@@ -1,6 +1,6 @@
-package com.vcu.meleetracker.web;
+package com.vcu.meleetracker.database.web;
 
-import com.vcu.meleetracker.repo.SetRepository;
+import com.vcu.meleetracker.database.repo.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/sets")
-public class SetController {
+@RequestMapping(value = "/players")
+public class PlayerController {
 
     @Autowired
-    SetRepository SetRepository;
+    PlayerRepository playerRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getSets(Model model) {
-        model.addAttribute("sets", SetRepository.findAll());
-        return "sets";
+    public String getPlayers(Model model){
+        model.addAttribute("players",playerRepository.findAll());
+        return "players";
     }
 }
