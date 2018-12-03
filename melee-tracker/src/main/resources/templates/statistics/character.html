@@ -40,8 +40,40 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1>Character Win Rate By Character</h1>
+            <table id="characterWinRateByCharacter" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Character ID</td>
+                    <td>Opponent Character ID</td>
+                    <td>Win Rate</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="character_win_rate_by_character: ${character_win_rate_by_character}">
+                    <td th:text="${character_win_rate_by_character.characterId}">Character ID</td>
+                    <td th:text="${character_win_rate_by_character.opponentCharacterId}">Opponent Character ID</td>
+                    <td th:text="${character_win_rate_by_character.winPercentage}">Win Rate</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Weight Win Rate</h1>
+            <table id="weightWinRate" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Weight</td>
+                    <td>Win Rate</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="weight_win_rate: ${weight_win_rate}">
+                    <td th:text="${weight_win_rate.weight}">Weight</td>
+                    <td th:text="${weight_win_rate.winPercentage}">Win Rate</td>
+                </tr>
+                </tbody>
+            </table>
             <h1>Character Pick Rate</h1>
-            <table id="table" class="table table-striped table-bordered table-sm">
+            <table id="characterPickRate" class="table table-striped table-bordered table-sm">
                 <thead>
                 <tr>
                     <td>Character ID</td>
@@ -52,6 +84,21 @@
                 <tr th:each="character_pick_rate: ${character_pick_rate}">
                     <td th:text="${character_pick_rate.characterId}">Character ID</td>
                     <td th:text="${character_pick_rate.gamesPlayed}">Games Played</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Character Win Rate</h1>
+            <table id="characterWinRate" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Character ID</td>
+                    <td>Win Rate</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="character_win_rate: ${character_win_rate}">
+                    <td th:text="${character_win_rate.characterId}">Character ID</td>
+                    <td th:text="${character_win_rate.winPercentage}">Win Rate</td>
                 </tr>
                 </tbody>
             </table>
