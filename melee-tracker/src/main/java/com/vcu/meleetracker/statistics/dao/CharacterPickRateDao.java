@@ -33,6 +33,7 @@ public class CharacterPickRateDao {
                 "  ) all_games\n" +
                 "  group by player_id, character_id;\n", new PopularThrowsMapper());
     }
+
     private static final class PopularThrowsMapper implements RowMapper<CharacterPickRate> {
 
         public CharacterPickRate mapRow(ResultSet rs, int rowNum) throws SQLException {
