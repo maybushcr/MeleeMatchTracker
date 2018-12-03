@@ -1,6 +1,6 @@
 package com.vcu.meleetracker.statistics.dao;
 
-import com.vcu.meleetracker.statistics.dto.CharacterPickRates;
+import com.vcu.meleetracker.statistics.dto.CharacterPickRate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -10,10 +10,9 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.List;
 
 @Repository
-public class CharacterPickRatesDao {
+public class CharacterPickRateDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -22,7 +21,7 @@ public class CharacterPickRatesDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public List<CharacterPickRates> findAll() {
+    public List<CharacterPickRate> findAll() {
         return this.jdbcTemplate.query( "select player_id, character_id, sum(games) as games_played\n" +
                 "from\n" +
                 "(\n" +
@@ -34,12 +33,12 @@ public class CharacterPickRatesDao {
                 "  ) all_games\n" +
                 "  group by player_id, character_id;\n", new PopularThrowsMapper());
     }
-    private static final class PopularThrowsMapper implements RowMapper<CharacterPickRates> {
+    private static final class PopularThrowsMapper implements RowMapper<CharacterPickRate> {
 
-        public CharacterPickRates mapRow(ResultSet rs, int rowNum) throws SQLException {
-            CharacterPickRates characterPickRates = new CharacterPickRates();
+        public CharacterPickRate mapRow(ResultSet rs, int rowNum) throws SQLException {
+            CharacterPickRate characterPickRates = new CharacterPickRate();
             characterPickRates.setPlayerId(rs.getInt("player_Id"));
-            characterPickRates.setCharcterId(rs.getInt("character_Id"));
+            characterPickRates.setCharacterId(rs.getInt("character_Id"));
             characterPickRates.setGamesPlayed(rs.getInt("games_played"));
             return characterPickRates;
         }
