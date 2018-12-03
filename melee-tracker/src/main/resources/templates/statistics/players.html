@@ -5,10 +5,9 @@
     <title>Melee Tracker</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+</head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">Melee Tracker</a>
@@ -40,46 +39,10 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <h1>Popular Throws</h1>
-            <table id="table" class="table table-striped table-bordered table-sm">
-                <thead>
-                <tr>
-                    <td>Throw Name</td>
-                    <td>Count</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="popular_throw: ${popular_throws}">
-                    <td th:text="${popular_throw.throwName}">Match ID</td>
-                    <td th:text="${popular_throw.count}">Start Time</td>
-                </tr>
-                </tbody>
-            </table>
-            <h1>PVP Win Rates</h1>
-            <table id="WinRates" class="table table-striped table-bordered table-sm">
-                <thead>
-                <tr>
-                    <td>Participant</td>
-                    <td>Win Rate</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="pvp_Win_Rate: ${pvp_win_rates}">
-                    <td th:text="${pvp_Win_Rate.participantName}">Participant</td>
-                    <td th:text="${pvp_Win_Rate.winPercentage}">Count</td>
-                </tr>
-                </tbody>
-            </table>
         </main>
     </div>
 </div>
-<script>
-$(document).ready(function () {
-    $('#table').DataTable();
-    $('#WinRates').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-});
-</script>
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </body>
 </html>

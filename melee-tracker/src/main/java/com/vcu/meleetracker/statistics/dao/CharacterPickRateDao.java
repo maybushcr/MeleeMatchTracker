@@ -22,26 +22,27 @@ public class CharacterPickRateDao {
     }
 
     public List<CharacterPickRate> findAll() {
-        return this.jdbcTemplate.query( "select player_id, character_id, sum(games) as games_played\n" +
+        return this.jdbcTemplate.query( "select character_id, sum(games) as games_played\n" +
                 "from\n" +
                 "(\n" +
-                "   (select player1_id as player_id, player1_character_id as character_id, count(*) as games\n" +
+                "  (select player1_character_id as character_id, count(*) as games\n" +
                 "  from matches\n" +
-                "  (select player2_id as player_id, player2_character_id as character_id, count(*) as games\n" +
-                "from matches\n" +
-                "  group by player2_id, player2_character_id)\n" +
-                "  ) all_games\n" +
-                "  group by player_id, character_id;", new PopularThrowsMapper());
+                "  group by player1_character_id) \n" +
+                "UNION ALL\n" +
+                "  (select player2_character_id as character_id, count(*) as games\n" +
+                "  from matches\n" +
+                "  group by player2_character_id) \n" +
+                ") all_games\n" +
+                "group by character_id;", new CharacterPickRateDao.CharacterPickRateMapper());
     }
 
-    private static final class PopularThrowsMapper implements RowMapper<CharacterPickRate> {
+    private static final class CharacterPickRateMapper implements RowMapper<CharacterPickRate> {
 
         public CharacterPickRate mapRow(ResultSet rs, int rowNum) throws SQLException {
-            CharacterPickRate characterPickRates = new CharacterPickRate();
-            characterPickRates.setPlayerId(rs.getInt("player_Id"));
-            characterPickRates.setCharacterId(rs.getInt("character_Id"));
-            characterPickRates.setGamesPlayed(rs.getInt("games_played"));
-            return characterPickRates;
+            CharacterPickRate characterPickRate = new CharacterPickRate();
+            characterPickRate.setCharacterId(rs.getInt("character_Id"));
+            characterPickRate.setGamesPlayed(rs.getInt("games_played"));
+            return characterPickRate;
         }
     }
 }
