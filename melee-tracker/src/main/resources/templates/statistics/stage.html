@@ -40,6 +40,70 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h1>Character Win Rate By Stage</h1>
+                <table id="characterWinRateByStage" class="table table-striped table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <td>Character ID</td>
+                        <td>Stage ID</td>
+                        <td>Win Rate</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="character_win_rate_by_stage: ${character_win_rate_by_stage}">
+                        <td th:text="${character_win_rate_by_stage.characterId}">Character ID</td>
+                        <td th:text="${character_win_rate_by_stage.stageId}">Stage ID</td>
+                        <td th:text="${character_win_rate_by_stage.winPercentage}">Win Rate</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h1>Player Win Rate By Stage</h1>
+                <table id="playerWinRateByStage" class="table table-striped table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <td>Player ID</td>
+                        <td>Stage ID</td>
+                        <td>Win Rate</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="player_win_rate_by_stage: ${player_win_rate_by_stage}">
+                        <td th:text="${player_win_rate_by_stage.playerId}">Character ID</td>
+                        <td th:text="${player_win_rate_by_stage.stageId}">Stage ID</td>
+                        <td th:text="${player_win_rate_by_stage.winPercentage}">Win Rate</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h1>Popular Stage</h1>
+                <table id="popularStage" class="table table-striped table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <td>Stage ID</td>
+                        <td>Frequency</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="popular_stage: ${popular_stage}">
+                        <td th:text="${popular_stage.stageId}">Stage ID</td>
+                        <td th:text="${popular_stage.frequency}">Frequency</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <h1>Banned Stage</h1>
+                <table id="bannedStage" class="table table-striped table-bordered table-sm">
+                    <thead>
+                    <tr>
+                        <td>Stage ID</td>
+                        <td>Frequency</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="banned_stage: ${banned_stage}">
+                        <td th:text="${banned_stage.stageId}">Stage ID</td>
+                        <td th:text="${banned_stage.frequency}">Frequency</td>
+                    </tr>
+                    </tbody>
+                </table>
             </main>
         </div>
     </div>
