@@ -39,6 +39,21 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1>Character Pick Rate</h1>
+            <table id="table" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Character ID</td>
+                    <td>Games Played</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="character_pick_rate: ${character_pick_rate}">
+                    <td th:text="${character_pick_rate.characterId}">Character ID</td>
+                    <td th:text="${character_pick_rate.gamesPlayed}">Games Played</td>
+                </tr>
+                </tbody>
+            </table>
         </main>
     </div>
 </div>
