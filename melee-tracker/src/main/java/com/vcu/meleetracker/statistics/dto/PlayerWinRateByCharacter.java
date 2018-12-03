@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class PlayerWinRateByCharacter {
 
+    private Integer playerId;
     private Integer characterId;
-    private Integer opponentCharacterId;
-    private Double winPercentage;
+    private Integer winPercentage;
 
     public PlayerWinRateByCharacter(){}
 
-    public PlayerWinRateByCharacter(Integer characterId, Integer opponentCharacterId, Double winPercentage) {
+    public PlayerWinRateByCharacter(Integer playerId, Integer characterId, Integer winPercentage) {
+        this.playerId = playerId;
         this.characterId = characterId;
-        this.opponentCharacterId = opponentCharacterId;
         this.winPercentage = winPercentage;
     }
 
@@ -21,14 +21,22 @@ public class PlayerWinRateByCharacter {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PlayerWinRateByCharacter that = (PlayerWinRateByCharacter) o;
-        return Objects.equals(characterId, that.characterId) &&
-                Objects.equals(opponentCharacterId, that.opponentCharacterId) &&
+        return Objects.equals(playerId, that.playerId) &&
+                Objects.equals(characterId, that.characterId) &&
                 Objects.equals(winPercentage, that.winPercentage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(characterId, opponentCharacterId, winPercentage);
+        return Objects.hash(playerId, characterId, winPercentage);
+    }
+
+    public Integer getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
     }
 
     public Integer getCharacterId() {
@@ -39,19 +47,11 @@ public class PlayerWinRateByCharacter {
         this.characterId = characterId;
     }
 
-    public Integer getOpponentCharacterId() {
-        return opponentCharacterId;
-    }
-
-    public void setOpponentCharacterId(Integer opponentCharacterId) {
-        this.opponentCharacterId = opponentCharacterId;
-    }
-
-    public Double getWinPercentage() {
+    public Integer getWinPercentage() {
         return winPercentage;
     }
 
-    public void setWinPercentage(Double winPercentage) {
+    public void setWinPercentage(Integer winPercentage) {
         this.winPercentage = winPercentage;
     }
 }
