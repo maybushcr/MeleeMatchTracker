@@ -21,7 +21,7 @@ public class CharacterWinRateByStageDao {
     }
 
     public List<CharacterWinRateByStage> findAll() {
-        return this.jdbcTemplate.query( "select participant as character_id, grouped_games.stage_id, IFNULL(wins/games_played,0) as win_percentage\n" +
+        return this.jdbcTemplate.query( "select participant as character_id, grouped_games.stage_id as stage_id, IFNULL(wins/games_played,0) as win_percentage\n" +
                 "from\n" +
                 "(\n" +
                 "  select participant, stage_id, sum(games) as games_played\n" +
