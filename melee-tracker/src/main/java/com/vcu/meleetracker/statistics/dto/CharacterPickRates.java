@@ -3,9 +3,9 @@ package com.vcu.meleetracker.statistics.dto;
 import java.util.Objects;
 
 public class CharacterPickRates {
-        private int playerId;
-        private int charcterId;
-        private int gamesPlayed;
+    private int playerId;
+    private int charcterId;
+    private int gamesPlayed;
 
     public CharacterPickRates(){}
 
