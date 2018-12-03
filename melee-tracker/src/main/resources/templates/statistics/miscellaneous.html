@@ -53,17 +53,17 @@
                 </tbody>
             </table>
             <h1>Player Rock Paper Scissors Win Rate</h1>
-            <table id="popularThrows" class="table table-striped table-bordered table-sm">
+            <table id="playerRockPaperScissorsWinRate" class="table table-striped table-bordered table-sm">
                 <thead>
                 <tr>
-                    <td>Throw Name</td>
-                    <td>Count</td>
+                    <td>Player ID</td>
+                    <td>Win Percentage</td>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="popular_throw: ${popular_throws}">
-                    <td th:text="${popular_throw.throwName}">Match ID</td>
-                    <td th:text="${popular_throw.count}">Start Time</td>
+                <tr th:each="player_rock_paper_scissors_win_rate: ${player_rock_paper_scissors_win_rate}">
+                    <td th:text="${player_rock_paper_scissors_win_rate.playerId}">Player ID</td>
+                    <td th:text="${player_rock_paper_scissors_win_rate.winPercentage}">Win Percentage</td>
                 </tr>
                 </tbody>
             </table>
@@ -77,8 +77,38 @@
                 </thead>
                 <tbody>
                 <tr th:each="popular_throw: ${popular_throws}">
-                    <td th:text="${popular_throw.throwName}">Match ID</td>
-                    <td th:text="${popular_throw.count}">Start Time</td>
+                    <td th:text="${popular_throw.throwName}">Throw Name</td>
+                    <td th:text="${popular_throw.count}">Count</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Tournament Type Frequency</h1>
+            <table id="tournamentTypeFrequency" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Tournament Type ID</td>
+                    <td>Count</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="tournament_type_frequency: ${tournament_type_frequency}">
+                    <td th:text="${tournament_type_frequency.tournamentTypeId}">Tournament Type ID</td>
+                    <td th:text="${tournament_type_frequency.count}">Count</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Matches Played Over Time</h1>
+            <table id="matchesPlayedOverTime" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Day</td>
+                    <td>Count</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="matches_played_over_time: ${matches_played_over_time}">
+                    <td th:text="${matches_played_over_time.day}">Day</td>
+                    <td th:text="${matches_played_over_time.count}">Count</td>
                 </tr>
                 </tbody>
             </table>
