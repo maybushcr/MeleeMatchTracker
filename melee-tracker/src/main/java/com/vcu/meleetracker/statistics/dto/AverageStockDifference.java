@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class AverageStockDifference {
 
-    private Integer averageStockDifference;
+    private Double averageStockDifference;
 
     public AverageStockDifference(){}
 
-    public AverageStockDifference(Integer averageStockDifference) {
+    public AverageStockDifference(Double averageStockDifference) {
         this.averageStockDifference = averageStockDifference;
     }
 
@@ -25,11 +25,11 @@ public class AverageStockDifference {
         return Objects.hash(averageStockDifference);
     }
 
-    public Integer getAverageStockDifference() {
+    public Double getAverageStockDifference() {
         return averageStockDifference;
     }
 
-    public void setAverageStockDifference(Integer averageStockDifference) {
+    public void setAverageStockDifference(Double averageStockDifference) {
         this.averageStockDifference = averageStockDifference;
     }
 }

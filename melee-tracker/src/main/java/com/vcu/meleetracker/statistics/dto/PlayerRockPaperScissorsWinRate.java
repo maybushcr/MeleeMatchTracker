@@ -2,14 +2,14 @@ package com.vcu.meleetracker.statistics.dto;
 
 import java.util.Objects;
 
-public class PlayerRockPaperScissorsWinrate {
+public class PlayerRockPaperScissorsWinRate {
 
     private Integer playerId;
     private Double winPercentage;
 
-    public PlayerRockPaperScissorsWinrate(){}
+    public PlayerRockPaperScissorsWinRate(){}
 
-    public PlayerRockPaperScissorsWinrate(Integer playerId, Double winPercentage) {
+    public PlayerRockPaperScissorsWinRate(Integer playerId, Double winPercentage) {
         this.playerId = playerId;
         this.winPercentage = winPercentage;
     }
@@ -18,7 +18,7 @@ public class PlayerRockPaperScissorsWinrate {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PlayerRockPaperScissorsWinrate that = (PlayerRockPaperScissorsWinrate) o;
+        PlayerRockPaperScissorsWinRate that = (PlayerRockPaperScissorsWinRate) o;
         return Objects.equals(playerId, that.playerId) &&
                 Objects.equals(winPercentage, that.winPercentage);
     }

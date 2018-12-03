@@ -5,13 +5,13 @@ import java.util.Objects;
 public class WeightWinRate {
 
     private Integer weight;
-    private Double win_percentage;
+    private Double winPercentage;
 
     public WeightWinRate(){}
 
-    public WeightWinRate(Integer weight, Double win_percentage) {
+    public WeightWinRate(Integer weight, Double winPercentage) {
         this.weight = weight;
-        this.win_percentage = win_percentage;
+        this.winPercentage = winPercentage;
     }
 
     @Override
@@ -20,12 +20,12 @@ public class WeightWinRate {
         if (o == null || getClass() != o.getClass()) return false;
         WeightWinRate that = (WeightWinRate) o;
         return Objects.equals(weight, that.weight) &&
-                Objects.equals(win_percentage, that.win_percentage);
+                Objects.equals(winPercentage, that.winPercentage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(weight, win_percentage);
+        return Objects.hash(weight, winPercentage);
     }
 
     public Integer getWeight() {
@@ -36,11 +36,11 @@ public class WeightWinRate {
         this.weight = weight;
     }
 
-    public Double getWin_percentage() {
-        return win_percentage;
+    public Double getWinPercentage() {
+        return winPercentage;
     }
 
-    public void setWin_percentage(Double win_percentage) {
-        this.win_percentage = win_percentage;
+    public void setWinPercentage(Double winPercentage) {
+        this.winPercentage = winPercentage;
     }
 }
