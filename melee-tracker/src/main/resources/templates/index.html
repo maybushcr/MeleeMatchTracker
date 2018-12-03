@@ -8,54 +8,55 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></head>
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
 <body>
-<nav class="nav nav-tabs">
-    <li class="nav-item">
-        <a class="nav-link active" href="../">Index</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../players">Players</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../characters">Characters</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../matches">Matches</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../stages">Stages</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../sets">Sets</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../strikes">Strikes</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../rock_paper_scissors">Rock Paper Scissors</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../tournament_types">Tournament Types</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="../tournaments">Tournaments</a>
-    </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Melee Tracker</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="../players">Players</a></li>
+            <li class="nav-item"><a class="nav-link" href="../characters">Characters</a></li>
+            <li class="nav-item"><a class="nav-link" href="../matches">Matches</a></li>
+            <li class="nav-item"><a class="nav-link" href="../stages">Stages</a></li>
+            <li class="nav-item"><a class="nav-link" href="../sets">Sets</a></li>
+            <li class="nav-item"><a class="nav-link" href="../strikes">Strikes</a></li>
+            <li class="nav-item"><a class="nav-link" href="../rock_paper_scissors">Rock Paper Scissors</a></li>
+            <li class="nav-item"><a class="nav-link" href="../tournament_types">Tournament Types</a></li>
+            <li class="nav-item"><a class="nav-link" href="../tournaments">Tournaments</a></li>
+        </ul>
+    </div>
 </nav>
-<h1>Popular Throws</h1>
-<table id="table" class="table table-striped table-bordered table-sm">
-    <thead>
-    <tr>
-        <td>Throw Name</td>
-        <td>Count</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="popular_throw: ${popular_throws}">
-        <td th:text="${popular_throw.throwName}">Match ID</td>
-        <td th:text="${popular_throw.count}">Start Time</td>
-    </tr>
-    </tbody>
-</table>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/statistics/stage">Stage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Another Page</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1>Popular Throws</h1>
+            <table id="table" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Throw Name</td>
+                    <td>Count</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="popular_throw: ${popular_throws}">
+                    <td th:text="${popular_throw.throwName}">Match ID</td>
+                    <td th:text="${popular_throw.count}">Start Time</td>
+                </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
 <script>
 $(document).ready(function () {
     $('#table').DataTable();
