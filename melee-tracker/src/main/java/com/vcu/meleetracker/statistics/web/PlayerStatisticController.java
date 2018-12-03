@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/statistics/players")
+@RequestMapping(value = "/statistics/player")
 public class PlayerStatisticController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class PlayerStatisticController {
         model.addAttribute("average_stock_difference",averageStockDifferenceDao.findAll());
         model.addAttribute("popular_throws",popularThrowsDao.findAll());
         model.addAttribute("player_win_rate_by_player",playerWinRateByPlayerDao.findAll());
-        return "statistics/players";
+        return "statistics/player";
     }
 
 

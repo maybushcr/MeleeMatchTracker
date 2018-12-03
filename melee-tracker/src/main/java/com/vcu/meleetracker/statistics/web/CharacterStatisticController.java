@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/statistics/characters")
-public class CharacterStatisticcontroller {
+@RequestMapping(value = "/statistics/character")
+public class CharacterStatisticController {
 
     @Autowired
     CharacterPickRateDao characterPickRateDao;
@@ -18,7 +18,7 @@ public class CharacterStatisticcontroller {
     @RequestMapping(method = RequestMethod.GET)
     public String getStageStatistics(Model model){
         model.addAttribute("character_pick_rate",characterPickRateDao.findAll());
-        return "statistics/characters";
+        return "statistics/character";
     }
 
 }
