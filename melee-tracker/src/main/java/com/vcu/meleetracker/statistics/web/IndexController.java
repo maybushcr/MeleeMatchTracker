@@ -26,13 +26,4 @@ public class IndexController {
         model.addAttribute("pvp_win_rates",pvpWinRatesDao.findAll());
         return "index";
     }
-
-    //@Autowired
-    //PVPWinRatesDao pvpWinRatesDao;
-
-    //@RequestMapping(method = RequestMethod.GET)
-    //public String getWinner(Model model){
-    //model.addAttribute("pvp_win_rates",pvpWinRatesDao.findAll());
-    //    return "index";
-    //}
 }
