@@ -29,7 +29,7 @@ public class MiscellaneousStatisticController {
     @RequestMapping(method = RequestMethod.GET)
     public String getStageStatistics(Model model){
         model.addAttribute("average_stock_difference",averageStockDifferenceDao.findAll());
-        model.addAttribute("rock_paper_scissors_win_rate",playerRockPaperScissorsWinRateDao.findAll());
+        model.addAttribute("player_rock_paper_scissors_win_rate",playerRockPaperScissorsWinRateDao.findAll());
         model.addAttribute("popular_throws",popularThrowsDao.findAll());
         model.addAttribute("tournament_type_frequency",tournamentTypeFrequencyDao.findAll());
         model.addAttribute("matches_played_over_time",matchesPlayedOverTimeDao.findAll());
