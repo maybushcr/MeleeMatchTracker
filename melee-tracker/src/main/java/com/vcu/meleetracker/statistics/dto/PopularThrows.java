@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class PopularThrows {
     private String throwName;
-    private int count;
+    private Integer count;
 
     public PopularThrows(){}
 
-    public PopularThrows(String throwName, int count) {
+    public PopularThrows(String throwName, Integer count) {
         this.throwName = throwName;
         this.count = count;
     }
@@ -39,7 +39,7 @@ public class PopularThrows {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }
