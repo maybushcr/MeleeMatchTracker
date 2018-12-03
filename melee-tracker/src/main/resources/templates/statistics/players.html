@@ -62,9 +62,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="pvp_Win_Rate: ${pvp_win_rates}">
-                    <td th:text="${pvp_Win_Rate.participantName}">Participant</td>
-                    <td th:text="${pvp_Win_Rate.winPercentage}">Count</td>
+                <tr th:each="player_win_rate_by_player: ${player_win_rate_by_player}">
+                    <td th:text="${player_win_rate_by_player.playerId}">Participant</td>
+                    <td th:text="${player_win_rate_by_player.opponentPlayerId}">Opponent</td>
+                    <td th:text="${player_win_rate_by_player.winPercentage}">Count</td>
                 </tr>
                 </tbody>
             </table>

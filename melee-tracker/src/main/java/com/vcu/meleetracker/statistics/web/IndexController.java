@@ -17,12 +17,12 @@ public class IndexController {
     @Autowired
     PopularThrowsDao popularThrowsDao;
     @Autowired
-    PlayerWinRateByPlayerDao pvpWinRatesDao;
+    PlayerWinRateByPlayerDao playerWinRateByPlayerDao;
 
     @RequestMapping(method = RequestMethod.GET)
     public String getPlayers(Model model){
         model.addAttribute("popular_throws",popularThrowsDao.findAll());
-        model.addAttribute("pvp_win_rates",pvpWinRatesDao.findAll());
+        model.addAttribute("player_win_rate_by_player",playerWinRateByPlayerDao.findAll());
         return "index";
     }
 }
