@@ -1,9 +1,7 @@
 package com.vcu.meleetracker.statistics.web;
 
 import com.vcu.meleetracker.database.repo.PlayerRepository;
-import com.vcu.meleetracker.statistics.dao.PlayerWinRateByPlayerDao;
-import com.vcu.meleetracker.statistics.dao.PopularThrowsDao;
-import com.vcu.meleetracker.statistics.dao.AverageStockDifferenceDao;
+import com.vcu.meleetracker.statistics.dao.*;
 import com.vcu.meleetracker.statistics.dto.AverageStockDifference;
 import com.vcu.meleetracker.statistics.dto.PlayerWinRateByPlayer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +15,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PlayerStatisticController {
 
     @Autowired
-    AverageStockDifferenceDao averageStockDifferenceDao;
+    PlayerWinRateDao playerWinRateDao;
+
     @Autowired
     PlayerWinRateByPlayerDao playerWinRateByPlayerDao;
+
     @Autowired
-    PopularThrowsDao popularThrowsDao;
+    CharacterPickRateByPlayerDao characterPickRateByPlayerDao;
+
+    @Autowired
+    PlayerWinRateByCharacterDao playerWinRateByCharacterDao;
+
+    @Autowired
+    PlayerMatchesPlayedDao playerMatchesPlayedDao;
 
     @RequestMapping(method = RequestMethod.GET)
     public String getPlayerStatistics(Model model){
-        model.addAttribute("average_stock_difference",averageStockDifferenceDao.findAll());
-        model.addAttribute("popular_throws",popularThrowsDao.findAll());
+        model.addAttribute("player_win_rate",playerWinRateDao.findAll());
         model.addAttribute("player_win_rate_by_player",playerWinRateByPlayerDao.findAll());
+        model.addAttribute("character_pick_rate_by_player",characterPickRateByPlayerDao.findAll());
+        model.addAttribute("player_win_rate_by_character",playerWinRateByCharacterDao.findAll());
+        model.addAttribute("player_matches_played",playerMatchesPlayedDao.findAll());
         return "statistics/player";
     }
 
