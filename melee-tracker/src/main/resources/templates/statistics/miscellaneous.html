@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Melee Tracker</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">Melee Tracker</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="../players">Players</a></li>
+            <li class="nav-item"><a class="nav-link" href="../characters">Characters</a></li>
+            <li class="nav-item"><a class="nav-link" href="../matches">Matches</a></li>
+            <li class="nav-item"><a class="nav-link" href="../stages">Stages</a></li>
+            <li class="nav-item"><a class="nav-link" href="../sets">Sets</a></li>
+            <li class="nav-item"><a class="nav-link" href="../strikes">Strikes</a></li>
+            <li class="nav-item"><a class="nav-link" href="../rock_paper_scissors">Rock Paper Scissors</a></li>
+            <li class="nav-item"><a class="nav-link" href="../tournament_types">Tournament Types</a></li>
+            <li class="nav-item"><a class="nav-link" href="../tournaments">Tournaments</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/statistics/stage">Stage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/statistics/character">Character</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/statistics/player">Player</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/statistics/miscellaneous">Miscellaneous</a></li>
+                </ul>
+            </div>
+        </nav>
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1>Character Pick Rate</h1>
+            <table id="table" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td><b>Average Stock Difference</b></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="average_stock_difference: ${average_stock_difference}">
+                    <td th:text="${average_stock_difference.averageStockDifference}">Average Stock Difference</td>
+                </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
