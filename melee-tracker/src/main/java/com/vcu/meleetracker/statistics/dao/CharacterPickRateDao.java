@@ -31,7 +31,7 @@ public class CharacterPickRateDao {
                 "from matches\n" +
                 "  group by player2_id, player2_character_id)\n" +
                 "  ) all_games\n" +
-                "  group by player_id, character_id;\n", new PopularThrowsMapper());
+                "  group by player_id, character_id;", new PopularThrowsMapper());
     }
 
     private static final class PopularThrowsMapper implements RowMapper<CharacterPickRate> {

@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class TournamentTypeFrequency {
 
-    private Integer tournament_type_id;
+    private Integer tournamentTypeId;
     private Integer count;
 
     public TournamentTypeFrequency(){}
 
-    public TournamentTypeFrequency(Integer tournament_type_id, Integer count) {
-        this.tournament_type_id = tournament_type_id;
+    public TournamentTypeFrequency(Integer tournamentTypeId, Integer count) {
+        this.tournamentTypeId = tournamentTypeId;
         this.count = count;
     }
 
@@ -19,21 +19,21 @@ public class TournamentTypeFrequency {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TournamentTypeFrequency that = (TournamentTypeFrequency) o;
-        return Objects.equals(tournament_type_id, that.tournament_type_id) &&
+        return Objects.equals(tournamentTypeId, that.tournamentTypeId) &&
                 Objects.equals(count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tournament_type_id, count);
+        return Objects.hash(tournamentTypeId, count);
     }
 
-    public Integer getTournament_type_id() {
-        return tournament_type_id;
+    public Integer getTournamentTypeId() {
+        return tournamentTypeId;
     }
 
-    public void setTournament_type_id(Integer tournament_type_id) {
-        this.tournament_type_id = tournament_type_id;
+    public void setTournamentTypeId(Integer tournamentTypeId) {
+        this.tournamentTypeId = tournamentTypeId;
     }
 
     public Integer getCount() {
