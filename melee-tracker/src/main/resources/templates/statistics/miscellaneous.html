@@ -40,8 +40,7 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <h1>Character Pick Rate</h1>
-            <table id="table" class="table table-striped table-bordered table-sm">
+            <table id="averageStockDifference" class="table table-striped table-bordered table-sm">
                 <thead>
                 <tr>
                     <td><b>Average Stock Difference</b></td>
@@ -50,6 +49,36 @@
                 <tbody>
                 <tr th:each="average_stock_difference: ${average_stock_difference}">
                     <td th:text="${average_stock_difference.averageStockDifference}">Average Stock Difference</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Player Rock Paper Scissors Win Rate</h1>
+            <table id="popularThrows" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Throw Name</td>
+                    <td>Count</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="popular_throw: ${popular_throws}">
+                    <td th:text="${popular_throw.throwName}">Match ID</td>
+                    <td th:text="${popular_throw.count}">Start Time</td>
+                </tr>
+                </tbody>
+            </table>
+            <h1>Popular Throws</h1>
+            <table id="popularThrows" class="table table-striped table-bordered table-sm">
+                <thead>
+                <tr>
+                    <td>Throw Name</td>
+                    <td>Count</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="popular_throw: ${popular_throws}">
+                    <td th:text="${popular_throw.throwName}">Match ID</td>
+                    <td th:text="${popular_throw.count}">Start Time</td>
                 </tr>
                 </tbody>
             </table>
