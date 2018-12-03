@@ -2,15 +2,15 @@ package com.vcu.meleetracker.statistics.dto;
 
 import java.util.Objects;
 
-public class WeightWinRate {
+public class PlayerRockPaperScissorsWinRate {
 
-    private Integer weight;
+    private Integer playerId;
     private Double winPercentage;
 
-    public WeightWinRate(){}
+    public PlayerRockPaperScissorsWinRate(){}
 
-    public WeightWinRate(Integer weight, Double winPercentage) {
-        this.weight = weight;
+    public PlayerRockPaperScissorsWinRate(Integer playerId, Double winPercentage) {
+        this.playerId = playerId;
         this.winPercentage = winPercentage;
     }
 
@@ -18,22 +18,22 @@ public class WeightWinRate {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        WeightWinRate that = (WeightWinRate) o;
-        return Objects.equals(weight, that.weight) &&
+        PlayerRockPaperScissorsWinRate that = (PlayerRockPaperScissorsWinRate) o;
+        return Objects.equals(playerId, that.playerId) &&
                 Objects.equals(winPercentage, that.winPercentage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(weight, winPercentage);
+        return Objects.hash(playerId, winPercentage);
     }
 
-    public Integer getWeight() {
-        return weight;
+    public Integer getPlayerId() {
+        return playerId;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
     }
 
     public Double getWinPercentage() {
