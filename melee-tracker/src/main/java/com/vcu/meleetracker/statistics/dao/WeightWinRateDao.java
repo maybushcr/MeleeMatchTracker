@@ -64,7 +64,7 @@ public class WeightWinRateDao {
 
         public WeightWinRate mapRow(ResultSet rs, int rowNum) throws SQLException {
             WeightWinRate weightWinRate = new WeightWinRate();
-            weightWinRate.setWeight(rs.getInt("throw_name"));
+            weightWinRate.setWeight(rs.getInt("character_weight"));
             weightWinRate.setWinPercentage(rs.getDouble("win_percentage"));
             return weightWinRate;
         }
