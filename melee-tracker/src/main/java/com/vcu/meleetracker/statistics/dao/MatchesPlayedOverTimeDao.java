@@ -22,9 +22,9 @@ public class MatchesPlayedOverTimeDao {
     }
 
     public List<MatchesPlayedOverTime> findAll() {
-        return this.jdbcTemplate.query( "select tournament_type_id, count(*) as count\n" +
-                "from tournaments\n" +
-                "group by tournament_type_id;", new MatchesPlayedOverTimeDao.MatchesPlayedOverTimeMapper());
+        return this.jdbcTemplate.query( "select DATE_FORMAT(match_start, '%Y-%m-%d') as day, count(*) as count\n" +
+                "from matches\n" +
+                "group by day;", new MatchesPlayedOverTimeDao.MatchesPlayedOverTimeMapper());
     }
 
     private static final class MatchesPlayedOverTimeMapper implements RowMapper<MatchesPlayedOverTime> {
