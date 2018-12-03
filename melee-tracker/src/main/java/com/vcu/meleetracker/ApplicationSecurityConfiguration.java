@@ -22,7 +22,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/index","/css/*","/js/*").permitAll()
+                //.antMatchers("/","/index","/css/*","/js/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
@@ -32,7 +32,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
     @Override
     protected UserDetailsService userDetailsService() {
         List<UserDetails> users = new ArrayList<>();
-        users.add(User.withDefaultPasswordEncoder().username("test").password("password").roles("USER","ADMIN").build());
+        users.add(User.withDefaultPasswordEncoder().username("admin").password("password").roles("USER","ADMIN").build());
         users.add(User.withDefaultPasswordEncoder().username("user").password("password").roles("USER").build());
         return new InMemoryUserDetailsManager(users);
     }
