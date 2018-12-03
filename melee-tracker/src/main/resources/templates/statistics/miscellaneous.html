@@ -116,59 +116,14 @@
                 </tr>
                 </tbody>
             </table>
-            <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
-                <script>
-                Highcharts.chart('container', {
-                    chart: {
-                        plotBackgroundColor: null,
-                        plotBorderWidth: null,
-                        plotShadow: false,
-                        type: 'pie'
-                    },
-                    title: {
-                        text: 'Popular Rock Paper Scissors Throws'
-                    },
-                    tooltip: {
-                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            dataLabels: {
-                                enabled: true,
-                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                                style: {
-                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                                }
-                            }
-                        }
-                    },
-                    series: [{
-                        name: 'Popular Throws',
-                        colorByPoint: true,
-                        data: [{
-                            name: 'Rock',
-                            y: 4,
-                            sliced: true,
-                            selected: true
-                        }, {
-                            name: 'Paper',
-                            y: 1
-                        }, {
-                            name: 'Scissors',
-                            y: 1
-                        }]
-                    }]
-                });
-                </script>
-            </div>
+            <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
         </main>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script>
+<script th:inline="javascript">
+/*<![CDATA[*/
 $(document).ready(function () {
     $('#averageStockDifference').DataTable();
     $('#playerRockPaperScissorsWinRate').DataTable();
@@ -177,6 +132,48 @@ $(document).ready(function () {
     $('#matchesPlayedOverTime').DataTable();
     $('.dataTables_length').addClass('bs-select');
 });
+
+    var popularThrows = /*[[${popular_throws}]]*/ 'default';
+    console.log(popularThrows);
+
+    var throwData = [];
+for (var i = 0; i < popularThrows.length; i++){
+    throwData.push({ name: popularThrows[i].throwName, y: popularThrows[i].count });
+}
+
+Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Popular Rock Paper Scissors Throws'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Popular Throws',
+            colorByPoint: true,
+            data: throwData
+        }]
+    });
+/*]]>*/
 </script>
 </body>
 </html>
