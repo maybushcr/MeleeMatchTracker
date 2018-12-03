@@ -20,7 +20,7 @@ public class PlayerMatchesPlayedDao {
     }
 
     public List<PlayerMatchesPlayed> findAll() {
-        return this.jdbcTemplate.query( "select player as played_id, sum(games) as games_played\n" +
+        return this.jdbcTemplate.query( "select player as player_id, sum(games) as games_played\n" +
                 "from\n" +
                 "(\n" +
                 "  (select player1_id as player, count(*) as games\n" +
