@@ -22,7 +22,7 @@ public class PlayerWinRateByPlayerDao {
     }
 
     public List<PlayerWinRateByPlayer> findAll() {
-        return this.jdbcTemplate.query( "select participant as played_id, grouped_games.opponent as opponent_player_id, IFNULL(wins/games_played,0) as win_percentage\n" +
+        return this.jdbcTemplate.query( "select participant as player_id, grouped_games.opponent as opponent_player_id, IFNULL(wins/games_played,0) as win_percentage\n" +
                 "from\n" +
                 "(\n" +
                 "  select participant, opponent, sum(games) as games_played\n" +
