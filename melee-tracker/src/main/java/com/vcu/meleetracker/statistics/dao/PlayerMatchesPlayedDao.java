@@ -41,7 +41,7 @@ public class PlayerMatchesPlayedDao {
         public PlayerMatchesPlayed mapRow(ResultSet rs, int rowNum) throws SQLException {
             PlayerMatchesPlayed playerMatchesPlayed = new PlayerMatchesPlayed();
             playerMatchesPlayed.setPlayerId(rs.getInt("player_id"));
-            playerMatchesPlayed.setGamesPlayed(rs.getInt("games_plaed"));
+            playerMatchesPlayed.setGamesPlayed(rs.getInt("games_played"));
             return playerMatchesPlayed;
         }
     }

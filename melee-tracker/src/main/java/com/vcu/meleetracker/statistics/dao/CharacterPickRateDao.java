@@ -40,7 +40,7 @@ public class CharacterPickRateDao {
 
         public CharacterPickRate mapRow(ResultSet rs, int rowNum) throws SQLException {
             CharacterPickRate characterPickRate = new CharacterPickRate();
-            characterPickRate.setCharacterId(rs.getInt("character_Id"));
+            characterPickRate.setCharacterId(rs.getInt("character_id"));
             characterPickRate.setGamesPlayed(rs.getInt("games_played"));
             return characterPickRate;
         }
